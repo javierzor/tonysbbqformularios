@@ -62,3 +62,20 @@ ion-grid2 {
     color: #fff;
   }
 }
+
+.seleccionada {
+  border-bottom: 1px solid #101010; 
+  border-left: 1px solid #101010; 
+  border-right: 1px solid #707070; 
+  background: #777777;
+  color:#000000;
+
+}
+
+.noseleccionada {
+  border-bottom: 1px solid #101010; 
+  border-left: 1px solid #101010; 
+  border-right: 1px solid #707070;   
+  background: #f3f3f3;
+  color:#777777;
+}

@@ -5,10 +5,10 @@
 
   <ion-row>
     <ion-col size="8">
-      <ion-text><strong>Nombre de<br>editor:</strong>Juan Carlos Perez</ion-text>
+      <ion-text><strong>Nombre de<br>editor:</strong>{{respuestadetonysvisualizarformularioresuelto[0].nombre_usuario_que_respondio}}</ion-text>
     </ion-col>
     <ion-col size="4" style="text-align:right;">
-      <ion-text>Fecha:08/09/2022</ion-text>
+      <ion-text *ngIf="respuestadetonysvisualizarformularioresuelto">Fecha:{{respuestadetonysvisualizarformularioresuelto[0].fecha_creacion | date:'shortDate':'GMT-3'}}</ion-text>
     </ion-col>
   </ion-row>
 
@@ -54,19 +54,27 @@
   </ion-row>
   
   <ion-row style="text-align:center;">
-    <ion-col size="6">
-     Respuesta: A
+    <ion-col *ngIf="cadarespuesta.a" size="6" [class]="cadarespuesta.respuestacerrada == 'a' ? 'seleccionada' : 'noseleccionada'">
+      {{cadarespuesta.a}}&nbsp;<ion-icon name="checkmark-done-outline" *ngIf="cadarespuesta.respuestacerrada=='a'"></ion-icon>
     </ion-col>
-    <ion-col size="6">
-      Respuesta: B
+    <ion-col *ngIf="cadarespuesta.b" size="6"[class]="cadarespuesta.respuestacerrada == 'b' ? 'seleccionada' : 'noseleccionada'">
+      {{cadarespuesta.b}}&nbsp;<ion-icon name="checkmark-done-outline" *ngIf="cadarespuesta.respuestacerrada=='b'"></ion-icon>
     </ion-col>
   </ion-row>
   <ion-row style="text-align:center;">
-    <ion-col size="6">
-     Respuesta: C
+    <ion-col *ngIf="cadarespuesta.c" size="6"[class]="cadarespuesta.respuestacerrada == 'c' ? 'seleccionada' : 'noseleccionada'">
+      {{cadarespuesta.c}}&nbsp;<ion-icon name="checkmark-done-outline" *ngIf="cadarespuesta.respuestacerrada=='c'"></ion-icon>
     </ion-col>
-    <ion-col size="6">
-      Respuesta: D
+    <ion-col *ngIf="cadarespuesta.d" size="6"[class]="cadarespuesta.respuestacerrada == 'd' ? 'seleccionada' : 'noseleccionada'">
+      {{cadarespuesta.d}}&nbsp;<ion-icon name="checkmark-done-outline" *ngIf="cadarespuesta.respuestacerrada=='d'"></ion-icon>
+    </ion-col>
+  </ion-row>
+  <ion-row style="text-align:center;">
+    <ion-col *ngIf="cadarespuesta.e" size="6"[class]="cadarespuesta.respuestacerrada == 'e' ? 'seleccionada' : 'noseleccionada'">
+      {{cadarespuesta.c}}&nbsp;<ion-icon name="checkmark-done-outline" *ngIf="cadarespuesta.respuestacerrada=='e'"></ion-icon>
+    </ion-col>
+    <ion-col *ngIf="cadarespuesta.f" size="6"[class]="cadarespuesta.respuestacerrada == 'f' ? 'seleccionada' : 'noseleccionada'">
+      {{cadarespuesta.d}}&nbsp;<ion-icon name="checkmark-done-outline" *ngIf="cadarespuesta.respuestacerrada=='f'"></ion-icon>
     </ion-col>
   </ion-row>
 </section>
