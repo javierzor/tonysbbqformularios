@@ -11,7 +11,7 @@
       <ion-text>Fecha:08/09/2022</ion-text>
     </ion-col>
   </ion-row>
-    
+
   <ion-row style="text-align:center;">
     <ion-col> 
     <strong>
@@ -20,24 +20,61 @@
     </ion-col>
   </ion-row>
 
+<ion-card *ngFor="let cadarespuesta of respuestadetonysvisualizarformularioresuelto; let i=index;">
+
+<section *ngIf="cadarespuesta.tipo=='abierta'">
   <ion-row class="ion-align-items-center filagris main-row-code">
     <ion-col size="auto">
-    <strong>1</strong>
+    <strong>{{i+1}}</strong>
     </ion-col>
     <ion-col class="columnablanca">
-      ¿ pacio sin ruptura) sirve para representar en HTML un espacio en blanco y se utiliza normalmente en dos casos: Cuando queremos  pacio sin ruptura) sirve para representar en HTML un espacio en blanco y se utiliza normalmente en dos casos: Cuando queremos pacio sin ruptura) sirve para  casos: Cuando queremos?
+      {{cadarespuesta.pregunta}}
     </ion-col>
   </ion-row>
-
+  
   <ion-row  class="filagris main-row-code2">
     <ion-col size="auto">
      Respuesta:
     </ion-col>
     <ion-col class="columnablanca" style="border-right: 1px solid #000000;">
-      <ion-text>lorel sj fsdfds sddgfe clfl sdfs dfñahdlifdsf sdf sdfs</ion-text>
+      <ion-text>{{cadarespuesta.respuestaabierta}}</ion-text>
     </ion-col>
   </ion-row>
+</section>
 
+
+<section *ngIf="cadarespuesta.tipo=='cerrada'">
+  <ion-row class="ion-align-items-center filagris main-row-code">
+    <ion-col size="auto">
+    <strong>{{i+1}}</strong>
+    </ion-col>
+    <ion-col class="columnablanca">
+      {{cadarespuesta.pregunta}}
+    </ion-col>
+  </ion-row>
+  
+  <ion-row style="text-align:center;">
+    <ion-col size="6">
+     Respuesta: A
+    </ion-col>
+    <ion-col size="6">
+      Respuesta: B
+    </ion-col>
+  </ion-row>
+  <ion-row style="text-align:center;">
+    <ion-col size="6">
+     Respuesta: C
+    </ion-col>
+    <ion-col size="6">
+      Respuesta: D
+    </ion-col>
+  </ion-row>
+</section>
+
+
+
+
+</ion-card>
 
 
 
