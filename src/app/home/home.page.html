@@ -1,9 +1,9 @@
 
 <ion-content [fullscreen]="true">
-<ion-grid>
+<ion-grid *ngIf="respuestadetonysvisualizarformularioresuelto&&respuestadetonysvisualizarformularioresuelto.length>0">
 
 
-  <ion-row>
+  <ion-row *ngIf="respuestadetonysvisualizarformularioresuelto">
     <ion-col size="8">
       <ion-text><strong>Nombre de<br>editor:</strong>{{respuestadetonysvisualizarformularioresuelto[0].nombre_usuario_que_respondio}}</ion-text>
     </ion-col>
@@ -80,13 +80,40 @@
 </section>
 
 
-
-
 </ion-card>
 
 
-
-
-
 </ion-grid>
+
+<ion-grid *ngIf="respuestadetonysvisualizarformularioresuelto&&respuestadetonysvisualizarformularioresuelto.length<1">
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Formulario no validado</ion-card-title>
+    <ion-card-subtitle>Vulva a abrir el enlace proporcionado</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-text>Formulario no valido. <p>Es posible que su acceso a las respuestas de este formulario haya
+              caducado o ha refrescado esta pagina, porfavor proporcione el enlace (completo) que se le ha proporcionado.
+              o haga click en el boton del correo que se le ha enviado.
+    </p></ion-text>
+  </ion-card-content>
+</ion-card>
+</ion-grid>
+
+
+<ion-grid *ngIf="!respuestadetonysvisualizarformularioresuelto">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Formulario no validado</ion-card-title>
+      <ion-card-subtitle>Vulva a abrir el enlace proporcionado</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>Formulario no valido. <p>Es posible que su acceso a las respuestas de este formulario haya
+                caducado o ha refrescado esta pagina, porfavor proporcione el enlace (completo) que se le ha proporcionado.
+                o haga click en el boton del correo que se le ha enviado.
+      </p></ion-text>
+    </ion-card-content>
+  </ion-card>
+  </ion-grid>
+
 </ion-content>
